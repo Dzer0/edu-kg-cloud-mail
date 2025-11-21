@@ -7,7 +7,7 @@
       <div class="x4 cloud"></div>
       <div class="x5 cloud"></div>
     </div>
-    <div v-else :style="background"></div>
+    <div v-else class="background-div" :style="background"></div>
     <div class="form-wrapper">
       <div class="container">
         <span class="form-title">{{ settingStore.settings.title }}</span>
@@ -98,12 +98,6 @@
             <el-avatar src="/image/linuxdo.webp" :size="18" style="margin-right: 10px" />LinuxDo
           </el-button>
         </div>
-        <template v-if="settingStore.settings.register === 0">
-          <div class="switch" @click="show = 'register'" v-if="show === 'login'">{{ $t('noAccount') }}
-            <span>{{ $t('regSwitch') }}</span></div>
-          <div class="switch" @click="show = 'login'" v-else>{{ $t('hasAccount') }} <span>{{ $t('loginSwitch') }}</span>
-          </div>
-        </template>
       </div>
     </div>
     <el-dialog class="bind-dialog" v-model="showBindForm"  title="注册邮箱" >
@@ -810,6 +804,14 @@ function submitRegister() {
   width: 180px;
   right: 50px;
   top: -90px;
+}
+
+.background-div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 </style>
