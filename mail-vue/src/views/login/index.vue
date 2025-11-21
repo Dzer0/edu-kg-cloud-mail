@@ -235,7 +235,7 @@ const background = computed(() => {
   return settingStore.settings.background ? {
     'background-image': `url(${cvtR2Url(settingStore.settings.background)})`,
     'background-repeat': 'no-repeat',
-    'background-size': 'cover',
+    'background-size': 'auto',
     'background-position': 'center'
   } : ''
 })
